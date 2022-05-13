@@ -1,1 +1,15 @@
-Nx7JjvywDpc6SIWPK6pv0FLd1r9AL7NhxjcO5EgQjebr4u8LGrjmZu8hYifWM6FIc5mdBrnQOOCcZSFowHRzILgafGP9J0fb9FFCp5M2/KaOLgAMZ1WmPOf7JkQFsDfO
+FROM quay.io/lyfe00011/test:beta
+
+RUN git clone https://github.com/Its-meDidulaBot/root/WhatsAsenaDuplicated
+
+WORKDIR /root/WhatsAsenaDuplicated/
+
+RUN yarn install --no-audit
+
+RUN git clone https://github.com/Its-meDidulaBot/uploads
+
+RUN cp -R /root/Utils/* /root/WhatsAsenaDuplicated 
+
+CMD ["node", "bot.js"]
+
+
